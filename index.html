@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>펭귄서버 위키 관리</title>
+<script>
+  // admin.penguinwiki.kr 로 들어오면 위키의 관리 화면으로 보냅니다.
+  // 뒤에 붙은 경로·검색·# 은 그대로 넘깁니다.  예) admin.penguinwiki.kr/editor.html?p=rules → penguinwiki.kr/admin/editor.html?p=rules
+  var WIKI_ADMIN = 'https://penguinwiki.kr/admin/';
+  var rest = location.pathname.replace(/^\/+/, '').replace(/^admin\/?/, '');
+  if (rest === 'index.html' || rest === '404.html') rest = '';
+  location.replace(WIKI_ADMIN + rest + location.search + location.hash);
+</script>
+<meta http-equiv="refresh" content="2; url=https://penguinwiki.kr/admin/">
+<style>body{margin:0;min-height:100vh;display:flex;align-items:center;justify-content:center;background:#f4f0e5;color:#34453d;font-family:system-ui,sans-serif}a{color:#4f715c}</style>
+</head>
+<body>
+  <p>관리 화면으로 이동합니다… <a href="https://penguinwiki.kr/admin/">바로 가기</a></p>
+</body>
+</html>
